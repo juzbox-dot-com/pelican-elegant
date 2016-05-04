@@ -1,5 +1,18 @@
 /* Base */
 /* #push.height = -#content-sans-footer.margin-bottom = #footer.margin-top + ul.footer-content */
+@font-face {
+    font-family: minmoji;
+    src: url('https://minmoji.ucda.jp/fontseot/http%3A__www.juzbox.com');
+    src: local('minmoji'),
+        url('https://minmoji.ucda.jp/fontswoff/http%3A__www.juzbox.com') format('woff'),
+        url('https://minmoji.ucda.jp/fonts/http%3A__www.juzbox.com') format('opentype');
+}
+
+body {
+    font-family:"minmoji", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", "Noto Sans Japanese", "Yu Gothic", YuGothic, "游ゴシック体", Meiryo, "メイリオ", sans-serif;
+    line-height: 150%;
+}
+
 body,
 html {
     height: 100%;
@@ -20,8 +33,6 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: Baskerville, Garamond, Georgia, 'DejaVu Serif', 'Times New Roman', Times, Serif;
-    font-weight: normal;
 }
 h1 small, h1 a, h1 a:hover,
 h2 small, h2 a, h2 a:hover,
@@ -41,7 +52,6 @@ hr {
 
 /* site title */
 .site-name {
-    font-family: 'Monaco', 'Inconsolata', 'Andale Mono', 'Lucida Console', 'Bitstream Vera Sans Mono', 'Courier New', Courier, Monospace;
 }
 /* Top navigation menu */
 .top-menu li a {
@@ -50,7 +60,7 @@ hr {
 /* Footer */
 #footer {
     border-top: 1px solid  rgba(0, 0, 0, .2);
-    font: .8em Calibri, Tahoma, Arial, Sans-Serif;
+    font-size: .8em;
     margin: 15px 0 0 0;
     padding: 0;
 }
@@ -90,7 +100,6 @@ ul.footer-content li {
     text-shadow: 0 0;
 }
 .disqus-comment-count {
-    font-family: 'Trebuchet MS', Trebuchet, 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, Sans-Serif;
     font-size: .9em;
 }
 #disqus_thread {
@@ -137,7 +146,6 @@ div.highlight {
 }
 /* Tags */
 .list-of-tags {
-    font-family: 'Helvetica Neue', Helvetica, Arial, Sans-Serif;
     list-style: none;
     margin: 0;
     overflow: hidden;
@@ -164,10 +172,8 @@ div.highlight {
     line-height: 28px;
 }
 .tag-title {
-    font-family: 'Trebuchet MS', Trebuchet, 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, Sans-Serif;
 }
 .articles-in-tag li {
-    font: 1.1em/1.6em 'Trebuchet MS', Trebuchet, 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, Sans-Serif;
 }
 /* Article */
 article p:not(#list-of-translations):not(#post-share-links) a,
@@ -184,8 +190,6 @@ article div.article-content ul:not(.articles-timeline) a:hover {
     text-shadow: none;
 }
 .article-content, div.recent-posts p {
-    font: 1.2em/1.6em 'PT Serif', Georgia, 'Times New Roman', Times, Serif;
-    text-align: justify;
 }
 .article-content {
     /* max-width: 50em; */
@@ -215,7 +219,6 @@ article div.article-content ul:not(.articles-timeline) a:hover {
     position:absolute;
 }
 .article-content blockquote {
-    font-family: 'Helvetica Neue', Helvetica, Arial, Sans-Serif;
     font-size: inherit;
     font-variant: normal;
     line-height: 1.7em;
@@ -380,8 +383,7 @@ ul.list-articles-category {
 ul.list-articles-category li time {
     color: #8F8F8F;
     display: inline-block;
-    font: .9em 'PT Sans', 'Helvetica Neue', Arial, Sans-Serif;
-    width: 7em;
+    width: 10em;
 }
 a.category-link {
     color: #333;
@@ -390,7 +392,6 @@ a.category-link:hover {
     text-decoration: none;
 }
 a.list-of-categories {
-    font-family: 'Trebuchet MS', Trebuchet, 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, Sans-Serif;
     font-size: 1.1em;
 }
 a.list-of-categories:hover {
@@ -405,7 +406,6 @@ ul.list-all-articles {
 }
 ul.list-all-articles li {
     border-bottom: 1px dotted #000;
-    font-family: 'Trebuchet MS', Trebuchet, 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, Sans-Serif;
     font-size: 1.1em;
     padding: .3em 0;
     overflow: auto;
@@ -413,7 +413,6 @@ ul.list-all-articles li {
 ul.list-all-articles li time {
     color: #AAA;
     float: right;
-    font-family: 'PT Sans', 'Helvetica Neue', Arial, Sans-Serif;
     font-size: .9em;
 }
 div.blog-archives h2 {
@@ -442,7 +441,6 @@ div.blog-archives time, div.recent-posts time {
 }
 div.blog-archives time, div.recent-posts time, div.recent-posts section {
     color: #8F8F8F;
-    font: .9em 'PT Sans', 'Helvetica Neue', Arial, Sans-Serif;
 }
 div.recent-posts section a {
     color: inherit;
@@ -553,7 +551,6 @@ a#allposts:hover {
 }
 .proj-desc {
     color: #999;
-    font: .9em 'PT Sans', 'Helvetica Neue', Arial, Sans-Serif;
 }
 /* reST specific rules*/
 .literal {

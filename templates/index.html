@@ -38,16 +38,13 @@
     {% if PROJECTS and LANDING_PAGE_ABOUT %}
     {% set css_class = 'col-md-8 col-md-offset-2' %}
     {% endif %}
-    <div class="row">
     <div class="{{css_class}}">
     <header class="page-header">
     <h1><a href="{{ SITEURL }}">{{ LANDING_PAGE_ABOUT.title }}</a></h1>
     </header>
     </div>
-    </div>
     {% endif %}
 
-    <div class="row">
         {% if LANDING_PAGE_ABOUT and LANDING_PAGE_ABOUT.details %}
         {% set css_class = 'col-md-8 col-md-offset-2' %}
         {% if PROJECTS and LANDING_PAGE_ABOUT %}
@@ -55,7 +52,7 @@
         {% endif %}
         <div class="{{css_class}}">
             <header>
-            <h1 id="about-me">About this site</h1>
+            <h1 id="about-me">About This Site</h1>
             </header>
             <div class="article-content">
                 {{ LANDING_PAGE_ABOUT.details }}

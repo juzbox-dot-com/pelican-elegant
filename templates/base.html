@@ -40,6 +40,7 @@
         {% else %}
         <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/pygments.css" media="screen">
         <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/tipuesearch/tipuesearch.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/fresco/fresco.css" media="screen">
         <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/elegant.css" media="screen">
         <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/custom.css" media="screen">
         {% endif %}
@@ -100,6 +101,7 @@
         {% block script %}
         <script src="http://code.jquery.com/jquery.min.js"></script>
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <script src="{{ SITEURL }}/theme/fresco/fresco.js"></script>
         <script>
             function validateForm(query)
             {
@@ -107,6 +109,14 @@
             }
             $(function() {
                 $('.article-content table').addClass('table table-striped');
+                $('.article-content img').addClass('img-responsive');
+                $('.article-content img.fresco').each(function() {
+                    $this = $(this);
+                    var $a = $('<a></a>');
+                    $a.attr('href', $this.attr('src'));
+                    $a.addClass('fresco');
+                    $this.wrap($a);
+                })
             });
         </script>
         {% endblock script %}

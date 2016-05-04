@@ -20,37 +20,36 @@
 {{ smo_metadata(page) }}
 {% endblock meta_tags_in_head %}
 
+{% block body_tag %}
+{% if page.toc %}
+<body data-spy="scroll" data-target="#toc-container">
+{% else %}
+<body>
+{% endif %}
+{% endblock body_tag %}
+
 {% block content %}
 <article>
-<div class="row-fluid">
-    <header class="page-header span10 offset2">
-    <h1><a href="{{ SITEURL }}/{{ page.url }}"> {{ page.title }} {%if page.subtitle %} <small> {{ page.subtitle }} </small> {% endif %} </a></h1>
-    </header>
-</div>
 
-<div class="row-fluid">
+<div class="row">
     {% if page.toc %}
-    <div class="span2 table-of-content">
-        <nav>
-        <h4>Contents</h4>
+    <div class="col-md-2 table-of-content" role="complementary">
+        <nav class="hidden-print hidden-xs hidden-sm" id="toc-container">
         {{ page.toc }}
         </nav>
     </div>
-    <div class="span8 article-content">
+    <div class="col-md-10 article-content">
         {% else %}
-        <div class="span8 offset2 article-content">
+        <div class="col-md-10 col-md-offset-2 article-content">
             {% endif %}
+            <header class="page-header">
+            <h1><a href="{{ SITEURL }}/{{ page.url }}"> {{ page.title }} {%if page.subtitle %} <small> {{ page.subtitle }} </small> {% endif %} </a></h1>
+            </header>
 
             {{ page.content }}
             {% from '_includes/comments.html' import comments with context %}
             {{ comments(page) }}
         </div>
-        <section>
-        <div class="span2" style="float:right;font-size:0.9em;">
-            {% include '_includes/social_links.html' %}
-            {% include '_includes/mailchimp.html' %}
-        </div>
-        </section>
     </div>
     </article>
     {% endblock content %}
@@ -59,4 +58,19 @@
     {{ super() }}
     {% from '_includes/comments.html' import comments_script with context %}
     {{ comments_script(page) }}
+    {% if page.toc %}
+    <script type="text/javascript">
+    $(function() {
+        $('#toc-container ul').addClass('nav');
+        $('#toc-container').affix({
+            offset: {
+                top: 50,
+                bottom: function() {
+                    return (this.bottom = $('#footer').outerHeight(true));
+                }
+            }
+        });
+    });
+    </script>
+    {% endif %}
     {% endblock script %}

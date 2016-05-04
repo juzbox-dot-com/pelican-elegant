@@ -4,6 +4,9 @@ body,
 html {
     height: 100%;
 }
+body {
+    position: relative;
+}
 #content-sans-footer {
     min-height: 100%;
     margin-bottom: -60px;
@@ -96,8 +99,6 @@ ul.footer-content li {
 }
 /* Syntax Highlight */
 table {
-    table-layout: fixed;
-    width: 100%;
 }
 td {
     vertical-align: top;
@@ -187,7 +188,7 @@ article div.article-content ul:not(.articles-timeline) a:hover {
     text-align: justify;
 }
 .article-content {
-    max-width: 50em;
+    /* max-width: 50em; */
 }
 .article-content p, div.recent-posts p {
     font-size: inherit;
@@ -255,8 +256,6 @@ article div.article-content ul:not(.articles-timeline) a:hover {
 .page-header {
     border-bottom: 1px solid #8f8686;
     color: #8B0000;
-    margin: 10px 10px 20px;
-    padding: 5px;
 }
 .page-header h1 {
     font-size: 3em;
@@ -339,7 +338,7 @@ ul.multi-parts-list li.active-part {
     font-style: italic;
 }
 .table-of-content .toc {
-    font-size: .7em;
+    font-size: 1em;
 }
 .last-updated a {
     color: #333;
@@ -602,4 +601,3 @@ div.figure.align-left, .article-content img.align-left {
     float: left;
     margin-right: 1.5em;
 }
-

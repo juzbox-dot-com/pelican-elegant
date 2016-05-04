@@ -31,16 +31,20 @@ All tags used in the {{ SITENAME|striptags|e }} blog.
 
 {% block content %}
 
-<div class="row-fluid">
-    <header class="page-header span10 offset2">
+<div class="row">
+    <div class="col-md-10 col-md-offset-2">
+    <header class="page-header">
     <h1><a href="{{ SITEURL }}/tags.html">All Tags</a></h1>
     </header>
+    </div>
 </div>
-<div class="row-fluid">
-    <div class="span8 offset2">
+<div class="row">
+    <div class="col-md-8 col-md-offset-2">
+        <div class="input-group">
         <form class="form-search">
-            <input type="text" class="input-medium search-query filterinput" placeholder="Find a tag">
+            <input type="text" class="form-control search-query filterinput" placeholder="Find a tag">
         </form>
+        </div>
         <ul class="list-of-tags">
             {% for tag, articles in tags|sort %}
             <li>
@@ -52,8 +56,8 @@ All tags used in the {{ SITENAME|striptags|e }} blog.
     </div>
 </div>
 
-<div class="row-fluid">
-    <div class="span8 offset2">
+<div class="row">
+    <div class="col-md-8 col-md-offset-2">
         {% for tag, articles in tags|sort %}
         <h2 id="{{ tag.slug }}-ref" class="tag-title">{{ tag }}</h2>
         <ul class="articles-in-tag list-articles-category">

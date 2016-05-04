@@ -1,0 +1,44 @@
+.container-fluid .row {
+    margin: 0;
+}
+
+@media (min-width:992px) {
+    #toc-container .nav > .active > ul {
+        display: block
+    }
+
+    #toc-container.affix, #toc-container.affix-bottom {
+        width: 132px
+    }
+
+    #toc-container.affix {
+        position: fixed;
+        top: 20px
+    }
+
+    #toc-container.affix-bottom {
+        position: absolute
+    }
+
+    #toc-container.affix .bs-docs-sidenav, #toc-container.affix-bottom .bs-docs-sidenav {
+        margin-top: 0;
+        margin-bottom: 0
+    }
+}
+
+@media (min-width:1200px) {
+    #toc-container.affix, #toc-container.affix-bottom {
+        width: 165px
+    }
+}
+
+#toc-container .toc > ul > li {
+    padding: 2px 2px 2px 0px;
+}
+#toc-container  li a {
+    font-family: serif;
+    padding: 0;
+}
+#toc-container .toc > ul > li > ul > li {
+    padding: 2px 2px 2px 10px;
+}
